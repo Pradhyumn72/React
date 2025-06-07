@@ -1,28 +1,38 @@
-import { useState,useEffect } from "react";
+import Home from "../Home";
+import Insert from "../Insert";
+import Display from "../Display";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Layout from "../Layout";
 
 const App=()=>{
-  const[myval,setMyval]=useState(0)
-  useEffect(()=>{
-    setTimeout(() => {
-      setMyval(myval+1)
-    }, 2000);
-   
-  })
 
-  return(
+return(
 
-    <>
-    <h1>Welcome to my app: {myval}</h1>
-    
-    </>
-  )
+  <>
+  <BrowserRouter>
+  <Routes>
+  <Route path="/" element={<Layout/>}>
+  <Route path="home" element={<Home/>}/>
+  <Route path="insert" element={<Insert/>}/>
+  <Route path="display" element={<Display/>}/>
+
+</Route>
+  </Routes>
+  
+  
+  </BrowserRouter>
+  
+  </>
+)
+
+
+
+
 
 }
-
   
   
 
 
 export default App;
-
 

@@ -1,8 +1,8 @@
 
-const Services = () => {
-  return (
-    <h1>This is services</h1>
-  );
-}
+// const Services = () => {
+//   return (
+//     <h1>This is services</h1>
+//   );
+// }
 
-export default Services;
+// export default Services;
