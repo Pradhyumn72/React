@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const display = () => {
+const Display = () => {
     const [mydata, setmydata] = useState([]);
 
     const loadData = async () => {
@@ -42,4 +42,4 @@ const display = () => {
     );
 };
 
-export default display;
+export default Display;

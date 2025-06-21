@@ -11,7 +11,7 @@ setInput(values=>({...values, [name]:value}))
 console.log(input);
 }
 const handleSubmit=async()=>{
-  let api="http://localhost:3002/employee"
+  let api="http://localhost:3000/employee"
   const response= await axios.post(api,input)
   alert("data inserted")
 

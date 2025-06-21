@@ -1,24 +1,20 @@
-import { Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Display from "./pages/Display";
-import Home from "./pages/Home";
-import Update from "./pages/Update";
-import Insert from "./pages/insert";
-
+import { bgcolorChange } from "./Colorslice";
+import { useDispatch, useSelector } from "react-redux";
+import { use, useState } from "react";
 
 
 const App = () => {
+  const clr=useSelector(state=>state.mycolor.color)
+  const dispatch=useDispatch("")
+  const[txtval,setTxtval]=useState("")
+  
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route path="insert" element={<Insert />} />
-        <Route path="display" element={<Display />} />
-        <Route path="update" element={<Update />} />
+    <>
+    enter color: <input type="text" value={txtval} onChange={(e)=>{setTxtval(e.target.value)}}/>
 
-      </Route>
-    </Routes>
+  <button onClick={()=>{dispatch(bgcolorChange(txtval))}}>click here</button>
+  <div style={{width:"200px",height:"200px", backgroundColor:clr}}></div>
+    </>
   );
 };
 
